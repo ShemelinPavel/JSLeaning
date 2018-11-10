@@ -1,0 +1,18 @@
+﻿<meta charset = "utf-8">
+<script type="text/javascript">
+
+//курсы валют на 7.11.2018
+
+var dollarCurrentRate = 66.14;
+var euroCurrentRate = 75.75;
+
+var rubleAmount = prompt("Введите количество рублей для конвертации");
+
+rubleAmount = parseFloat(rubleAmount);
+
+var rubledollarRate = rubleAmount/dollarCurrentRate;
+var rubleeuroRate = rubleAmount/euroCurrentRate;
+
+alert("По текущим данным за " + rubleAmount + " рублей вы получите :" + rubledollarRate.toFixed(2) + " долларов или " + rubleeuroRate.toFixed(2) + " евро.");
+
+</script>

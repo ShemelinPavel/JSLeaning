@@ -1,0 +1,67 @@
+<meta charset = "utf-8">
+<script type="text/javascript">
+
+	//сделаем вид, что массивов и словарей мы не знаем
+	//да-да-да eval - ЭТО ЗЛО! я уже знаю
+
+	//блок загадок и ответов
+	var riddleQuestion1 = "Без рук, без топоренка, построена избенка";
+	var riddleAnswer1 = "Гнездо";
+	
+	var riddleQuestion2 = "Без рук, без ног, а ходить умеют";
+	var riddleAnswer2 = "Часы";
+
+	var riddleQuestion3 = "Сидит дед, во сто шуб одет. Тот кто его раздевает, слезы проливает";
+	var riddleAnswer3 = "Лук";
+
+	var riddleQuestion4 = "Близок да не укусишь";
+	var riddleAnswer4 = "Локоть";
+	//блок загадок и ответов
+	
+	var riddleItemsMax = 4;
+	var riddleSuccessCounter = 0;
+		
+	for(var riddleCounter = 1; riddleCounter <= riddleItemsMax; riddleCounter++)
+	{
+	
+		var userAnswer = prompt("Отгадайте: " + eval('riddleQuestion' + riddleCounter));
+		
+		//для регистронезависимого сравнения приведем все к верх. регистру
+		if(eval('riddleAnswer' + riddleCounter).toUpperCase() == userAnswer.toUpperCase())
+		{
+			
+			riddleSuccessCounter++;
+			alert("Это правильный ответ!");
+					
+		}
+		else
+		{
+	
+			alert("Это неверный ответ!");
+		
+		}
+	
+	}
+
+	if(riddleItemsMax == riddleSuccessCounter)
+	{
+	
+		alert("Вы разгадали все загадки!");
+		
+	}
+	else if (riddleSuccessCounter == 0)
+	{
+	
+		alert("Это какой-то позор. (с) Швондер");
+		
+	}	
+	else
+	{
+		
+		alert("Вы разгадали " + riddleSuccessCounter + " из " + riddleItemsMax + " загадок.");
+				
+	}
+	
+	alert("Спасибо за игру!");
+	
+</script>

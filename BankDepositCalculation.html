@@ -1,0 +1,27 @@
+﻿<meta charset = "utf-8">
+<script type="text/javascript">
+
+	var bankDepositInitialSumm = +prompt("Введите сумму размещаемого депозита:");
+	var annualInterestRate = +prompt("Введите размер ставки по депозиту:");
+	
+	var depositTimeLimit = 5; // срок вклада
+	var depositTotalSumm = bankDepositInitialSumm; // полная сумма вклада за период
+	var interestTotalSumm = 0; // полная сумма % за период
+	
+	document.write("Расчет суммы вклада и процентов по нему за " + depositTimeLimit + " лет:<br>");
+	
+	for(counterDepositTime = 1; counterDepositTime <= depositTimeLimit; counterDepositTime++)
+	{
+		var interestCurrentSumm = parseFloat((depositTotalSumm * annualInterestRate / 100).toFixed(2)); // округляем до сотых
+		var depositCurrentSumm = depositTotalSumm + interestCurrentSumm;
+		
+		document.write("Расчет года № " + counterDepositTime + ". Размер вклада на начало периода: " +  depositTotalSumm + ". Сумма % за период: " + interestCurrentSumm + ". Сумма вклада на конец периода: " + depositCurrentSumm + "<br>");
+		
+		depositTotalSumm = depositCurrentSumm;
+		interestTotalSumm = parseFloat((interestTotalSumm + interestCurrentSumm).toFixed(2)); // какая-то хрень со складыванием чисел если у обоих есть дробная часть.
+				
+	}
+	
+	document.write("Итого по вкладу за " + depositTimeLimit + " лет: Общая сумма вклада: " + depositTotalSumm + ". Из нее % составляют: " + interestTotalSumm + "<br>");
+
+</script>
